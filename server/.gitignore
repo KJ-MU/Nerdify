@@ -23,7 +23,7 @@ logs/
 # Ignore dependency lock files
 package-lock.json
 yarn.lock
-
+serviceAccountKey
 # Ignore user-specific files
 .DS_Store
 static/

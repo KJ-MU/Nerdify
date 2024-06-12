@@ -43,7 +43,7 @@ const UserController = {
 
       res.status(200).json(token);
     } catch (error) {
-      next();
+      next(error);
     }
   },
 
