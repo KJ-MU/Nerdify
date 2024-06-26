@@ -12,7 +12,7 @@ app.use(express.json());
 
 connectDB();
 
-const port = 8000;
+const port = process.env.PORT || 8000;
 const staticPath = path.join(__dirname, "static/images");
 
 const ErrorHandler = require("./middleware/ErrorHandler");
