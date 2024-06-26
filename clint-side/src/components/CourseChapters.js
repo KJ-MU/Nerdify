@@ -1,7 +1,7 @@
 import Drawer from "./Drawer";
 import Subscribe from "./Subscribe";
 import LessonModal from "./LessonModal";
-import { jwtDecode } from "jwt-decode";
+import jwtDecode from "jwt-decode";
 import { createChapter } from "../features/chapterSlice";
 import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
@@ -49,7 +49,7 @@ const CourseChapters = ({
     } catch (error) {
       console.error("Invalid token:", error);
     }
-  });
+  }, [token, createdBy]);
 
   return (
     <div className="h-screen w-full">
@@ -96,11 +96,9 @@ const CourseChapters = ({
           </div>
         ) : null}
       </div>
-      {isSubscribedToThisCourse == true ||
-      isTheCreatorofThisCourse == true ? null : (
+      {!isSubscribedToThisCourse || !isTheCreatorofThisCourse ? (
         <Subscribe courseId={courseID} />
-      )}
-
+      ) : null}
       <LessonModal
         isOpen={modalIsOpen}
         onSubmit={handleAddLesson}

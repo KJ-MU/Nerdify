@@ -17,7 +17,7 @@ import LoadingSpinner from "./components/LoadingSpinner";
 
 function App() {
   const dispatch = useDispatch();
-  const { user, loading } = useSelector((state) => state.user);
+  const { loading } = useSelector((state) => state.user);
   const courses = useSelector((state) => state.course);
   useEffect(() => {
     dispatch(fetchCourses());
