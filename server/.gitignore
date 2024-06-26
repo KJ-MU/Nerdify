@@ -1,0 +1,32 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore environment-specific configuration files
+.env
+
+# Ignore logs and temporary files
+logs/
+*.log
+*.tmp
+
+# Ignore compiled code and build artifacts
+/build
+/dist
+*.bundle.js
+
+# Ignore editor and IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore dependency lock files
+package-lock.json
+yarn.lock
+serviceAccountKey
+# Ignore user-specific files
+.DS_Store
+static/
+
+
+serviceAccountKey.json
