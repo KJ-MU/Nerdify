@@ -8,7 +8,7 @@ const initialState = {
   error: null,
 };
 
-const API_ = "http://localhost:8000/user";
+const API_ = "https://nerdify-1.onrender.com/user";
 
 // Thunk for user login
 export const loginUser = createAsyncThunk(

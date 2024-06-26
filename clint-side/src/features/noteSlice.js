@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 // Thunks for asynchronous actions
-const API_ = "http://localhost:8000/note";
+const API_ = "https://nerdify-1.onrender.com/note";
 
 // Fetch notes by user and lesson
 export const fetchNotesByUserAndLesson = createAsyncThunk(

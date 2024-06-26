@@ -39,7 +39,7 @@ const Drawer = ({ chapter, editMode }) => {
 
       try {
         const response = await axios.get(
-          `http://localhost:8000/lesson/chapter/${chapter?._id}`
+          `https://nerdify-1.onrender.com/lesson/chapter/${chapter?._id}`
         );
         setLessons(response.data);
       } catch (err) {

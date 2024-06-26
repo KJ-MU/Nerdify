@@ -1,7 +1,7 @@
 // features/lessonSlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-const API_ = "http://localhost:8000/lesson";
+const API_ = "https://nerdify-1.onrender.com/lesson";
 
 // Thunks for asynchronous actions
 export const fetchLessonById = createAsyncThunk(

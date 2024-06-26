@@ -1,7 +1,7 @@
 // features/chapterSlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-const API_ = "http://localhost:8000/chapter";
+const API_ = "https://nerdify-1.onrender.com/chapter";
 const getToken = () => localStorage.getItem("token");
 // Thunks for asynchronous actions
 export const fetchAllChapters = createAsyncThunk(
@@ -26,7 +26,7 @@ export const createChapter = createAsyncThunk(
     const token = getToken();
 
     const response = await axios.post(
-      "http://localhost:8000/chapter/",
+      "https://nerdify-1.onrender.com/chapter/",
       formData,
       {
         headers: { Authorization: `Bearer ${token}` },

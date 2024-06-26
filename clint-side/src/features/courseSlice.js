@@ -13,7 +13,7 @@ const initialState = {
 
 // Helper function to get the token
 const getToken = () => localStorage.getItem("token");
-const API_ = "http://localhost:8000/course";
+const API_ = "https://nerdify-1.onrender.com/course";
 
 // Async Thunks
 export const fetchCourses = createAsyncThunk(
@@ -85,7 +85,7 @@ export const subscribeToCourse = createAsyncThunk(
   async ({ courseId }) => {
     const token = getToken();
     const response = await axios.post(
-      `http://localhost:8000/user/subscribe/${courseId}`,
+      `https://nerdify-1.onrender.com/user/subscribe/${courseId}`,
       {},
       {
         headers: { Authorization: `Bearer ${token}` },
