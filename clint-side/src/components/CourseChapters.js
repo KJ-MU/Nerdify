@@ -1,7 +1,7 @@
 import Drawer from "./Drawer";
 import Subscribe from "./Subscribe";
 import LessonModal from "./LessonModal";
-import jwtDecode from "jwt-decode";
+import * as jwtDecode from "jwt-decode";
 import { createChapter } from "../features/chapterSlice";
 import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
