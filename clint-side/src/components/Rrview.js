@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import { deleteReview } from "../features/reviewSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,12 +8,10 @@ const Review = () => {
   const { reviews } = useSelector((state) => state.review);
   const { course, loading, error } = useSelector((state) => state.course);
   const { token } = useSelector((state) => state.user);
-
+  let [userId, setUserId] = useState(null);
   const dispatch = useDispatch();
 
   const courseId = course?._id;
-  const decodedToken = jwtDecode(token);
-  const userId = decodedToken.userId;
 
   if (loading.isFulfilled) {
     dispatch(fetchReviewsByCourse(courseId));
@@ -27,8 +25,13 @@ const Review = () => {
   };
 
   useEffect(() => {
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      console.log(decodedToken);
+      setUserId(decodedToken.userId);
+    }
     dispatch(fetchReviewsByCourse(courseId));
-  }, [dispatch, course?._id]);
+  }, [dispatch, course?._id, token]);
 
   if (loading)
     return (
@@ -71,7 +74,7 @@ const Review = () => {
               </p>
             </footer>
             <p className="mb-2 text-left text-gray-500">{review?.text}</p>
-            {userId === review?.user._id ? (
+            {userId && userId === review?.user._id ? (
               <div className="w-full flex justify-end ">
                 <svg
                   className="hover:scale-110 transition-all ease-in-out"
